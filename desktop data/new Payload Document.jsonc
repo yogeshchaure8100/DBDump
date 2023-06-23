@@ -1,0 +1,130 @@
+//Rest URL Call : http://140.238.166.54:3000/migData/submit
+
+{
+    "requestDetails": {
+        "requestName": "CITI Request 1", // Request Name
+        "requestType": "All Executions", // Request Type
+        "instanceType": "ERP/SCM/PPM/HCM/CRM/", // Instance Type
+        "sourceDetails": {  // Source intance details 
+            "instanceId": 1, 
+            "instanceName": "oracle-test",
+            "url": "https://fa-epvg-test-saasfaprod1.fa.ocs.oraclecloud.com",
+            "instanceType": "ERP/SCM/PPM/HCM/CRM/",
+            "environmentType": "TEST",
+            "username": "Trainee User Functional",
+            "password": "Welcome@123"
+        },
+        "targetDetails": { // target intance details
+            "instanceId": 2,
+            "instanceName": "oracle-prod",
+            "url": "https://fa-epvg-saasfaprod1.fa.ocs.oraclecloud.com",
+            "instanceType": "ERP/SCM/PPM/HCM/CRM/",
+            "environmentType": "PROD",
+            "username": "Virendra.Phophaliya@lntinfotech.com",
+            "password": "Pa$$word#123"
+        },
+        "sourceUrl": "https://fa-epvg-test-saasfaprod1.fa.ocs.oraclecloud.com", // Source URL
+        "targetUrl": "https://fa-epvg-saasfaprod1.fa.ocs.oraclecloud.com", // Target URL
+        "workbookChecked": true, // Request type Generate Configuration Workbook(Selected = true)
+        "migrationChecked": true // Request Type Export & Import (Selected = true)
+    },
+    "offeringDetails": { // Offering selected from LOV Financials,Order Management,Procurement,Product Management,Sales
+        "offering": {
+            "offeringId": 1,
+            "offeringName": "Financials",
+            "disabled": "false"
+        },
+        "module": { // Module selected from LOV General Ledger, Accounts Payable
+            "moduleId": 1,
+            "moduleName": "General Ledger",
+            "offeringId": 1,
+            "disabled": "false",
+            "filterName": "Ledger",
+            "boardEmailId": "yogesh.chaure@lntinfotech.com"
+        },
+        "functionalArea": [ // Task And sub-tasks selected by User  in respected functional Area
+            {
+                "functionalAreaId": 1,
+                "functionalAreaName": "Initial Users",
+                "moduleId": 1,
+                "tasks": [
+                    {
+                        "taskId": 2,
+                        "offeringId": 1,
+                        "offeringName": "Financials",
+                        "moduleId": 1,
+                        "functionalAreaId": 1,
+                        "functionalAreaName": "Initial Users",
+                        "displaySeq": 2,
+                        "biTaskCode": "IU2",
+                        "taskName": "Manage Applications Security Preferences",
+                        "product": "Applications Security",
+                        "productFamily": "HCM",
+                        "required": "Y",  
+                        "conditional": "Y",
+                        "exportImport": "Y",
+                        "csvExportImport": "Y",
+                        "businessObject": "Security Console Administration Settings, Security Console User Category, Security Console User Category Notifications",
+                        "taskCode": "ORA_ASE_MANAGE_SECURITY_PREFERENCES"
+                    }
+                ]
+            },
+            {
+                "functionalAreaId": 2, // Task And sub-tasks selected by User  in respected functional Area
+                "functionalAreaName": "Enterprise Profile",
+                "moduleId": 1,
+                "tasks": [
+                    {
+                        "taskId": 7,
+                        "offeringId": 1,
+                        "offeringName": "Financials",
+                        "moduleId": 1,
+                        "functionalAreaId": 2,
+                        "functionalAreaName": "Enterprise Profile",
+                        "displaySeq": 1,
+                        "biTaskCode": "EP1",
+                        "taskName": "Establish Enterprise Structures",
+                        "product": "HCM Configuration Workbench",
+                        "productFamily": "HCM",
+                        "required": "Y",
+                        "conditional": "Y",
+                        "exportImport": "Y",
+                        "csvExportImport": "Y",
+                        "businessObject": "Enterprise Configuration, Enterprise Configuration Additional Job Structure, Enterprise Configuration Business Unit, Enterprise Configuration CD Matrix, Enterprise Configuration Country, Enterprise Configuration Division, Enterprise Configuration Enterprise, Enterprise Configuration Function, Enterprise Configuration Job Group Member, Enterprise Configuration Job Position Global, Enterprise Configuration Job Structure, Enterprise Configuration Legal Entity, Enterprise Configuration Location, Enterprise Configuration Position Group Member, Enterprise Configuration Reference Data Set, Enterprise Configuration Set Assignment Override",
+                        "taskCode": "HRW_ESTABLISH_ENTERPRISE_STRUCTURES"
+                    },
+                    
+                    {
+                        "taskId": 8,
+                        "offeringId": 1,
+                        "offeringName": "Financials",
+                        "moduleId": 1,
+                        "functionalAreaId": 2,
+                        "functionalAreaName": "Enterprise Profile",
+                        "displaySeq": 2,
+                        "biTaskCode": "EP2",
+                        "taskName": "Manage Reference Data Sets",
+                        "product": "Oracle Middleware Extensions for Applications",
+                        "productFamily": "Common",
+                        "required": "Y",
+                        "conditional": "Y",
+                        "exportImport": "Y",
+                        "csvExportImport": "Y",
+                        "businessObject": "Application Reference Data Set",
+                        "taskCode": "FND_MANAGE_REFERENCE_DATA_SETS"
+                    }
+                ]
+            }
+        ],
+        "filter": {
+            "type": "General Ledger",
+            "id": "300000002520025",
+            "name": "Infotech All PL Ledger"
+        }
+    },
+    "userDetails": {
+        "username": "Yogesh Chaure",
+        "email": "yogesh.chaure@lntinfotech.com",
+        "role": "Consultant"
+    }
+}
